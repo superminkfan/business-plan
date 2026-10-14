@@ -1,0 +1,34 @@
+{
+  "exportDate": "2026-10-14",
+  "sourceSha256": "69215c90937e08fdb356dd1f4c698253230b3045c7626a59077192dc9af74a98",
+  "modelContent": {
+    "planDate": "2026-10-13",
+    "view": "two",
+    "pcPlaces": 10,
+    "pcExpansion": 2,
+    "ps5Rooms": 2,
+    "vipAreasApprox": [
+      12,
+      17
+    ],
+    "passage": "right dead end absorbed into VIP 2; shared route links 65, both VIP doors and exit",
+    "vip2": "rotated U sofa, internal TV wall and low table in added area",
+    "unconfirmedZone88": "kept free of furniture",
+    "columnTreatment": "furniture cladding, outside shared passage",
+    "entrance": 99,
+    "reception": "straight counter north of 99",
+    "kitchen": "small open table and one sink, no walls or hot equipment in sketch",
+    "wcAccess": "preserved",
+    "display": "between lower columns, snacks and drinks",
+    "fireBoards": "old PC 5, access reserved",
+    "candidateExit": "86 north opening at 5.64, via staircase 63 to street",
+    "connection65": "left corridor preserved",
+    "openFloor": true,
+    "evacuationVerified": false
+  },
+  "privateContent": {
+    "revision": "2026-10-13-layout-v5",
+    "view": "two",
+    "routes": true
+  }
+}

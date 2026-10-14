@@ -1,0 +1,354 @@
+<div id="club-full-plan">
+  <h3>Полный план клуба</h3>
+  <div class="viz-controls" aria-label="Вид схемы">
+    <button class="btn" type="button" data-view="two" aria-pressed="true">Расстановка · 2 VIP</button>
+    <button class="btn" type="button" data-view="source" aria-pressed="false">Контур помещений</button>
+    <label class="form-check"><input class="form-check-input" type="checkbox" id="club-full-routes" checked><span class="form-check-label">Маршруты к выходам</span></label>
+  </div>
+  <div class="viz-row full-status tabular-nums" id="club-full-status" aria-live="polite">10 ПК · 2 VIP · резерв +2 ПК</div>
+  <svg class="full-drawing" role="img" aria-labelledby="club-full-title club-full-desc"></svg>
+  <div class="viz-row text-small full-legend">
+    <span><b class="full-key full-pc-key"></b>ПК</span>
+    <span><b class="full-key full-ps-key"></b>PS5</span>
+    <span id="club-kitchen-key"><b class="full-key full-kitchen-key"></b>Стол / мойка</span>
+    <span><b class="full-line full-reserve-key"></b>Резерв +2 ПК</span>
+    <span><b class="full-key full-joinery-key"></b>Перегородки / мебельные ниши</span>
+    <span><b class="full-line full-main-key"></b>Вход/выход №99</span>
+    <span><b class="full-line full-backup-key"></b>№86 → 5,64 → №63</span>
+    <span><b class="full-line full-corridor-key"></b>№65 → коридор</span>
+    <span id="club-historic-key" hidden><b class="full-line full-historic-key"></b>Учётные зоны</span>
+  </div>
+  <div class="text-small full-caption" id="club-full-detail">VIP ≈12 / 17 м² · Правый тупик присоединён к VIP 2</div>
+  <div class="text-small full-caption" id="club-kitchen-detail">Открытая зона: стол 1,0 × 0,6 м + мойка · Без перегородок</div>
+  <div class="text-small full-caption">Новая нумерация ПК · Резерв после обмера · Щиты доступны · Выход №63 — проверить</div>
+</div>
+<style>
+  #club-full-plan .full-status { justify-content: flex-start; margin-top: 12px; }
+  #club-full-plan .full-drawing { display: block; width: 100%; }
+  #club-full-plan .full-legend { justify-content: flex-start; gap: 10px 18px; }
+  #club-full-plan .full-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  #club-full-plan .full-legend [hidden] { display: none; }
+  #club-full-plan .full-key { display: inline-block; width: 12px; height: 12px; font-weight: 400; }
+  #club-full-plan .full-pc-key { background: var(--viz-series-1); opacity: .55; }
+  #club-full-plan .full-ps-key { background: var(--viz-series-2); opacity: .55; }
+  #club-full-plan .full-kitchen-key { background: var(--viz-series-5); opacity: .55; }
+  #club-full-plan .full-caption[hidden] { display: none; }
+  #club-full-plan .full-line { display: inline-block; width: 20px; height: 0; font-weight: 400; }
+  #club-full-plan .full-main-key { border-top: 2px solid var(--viz-series-3); }
+  #club-full-plan .full-backup-key { border-top: 2px dashed var(--viz-series-4); }
+  #club-full-plan .full-corridor-key { border-top: 1px dashed var(--muted-foreground); }
+  #club-full-plan .full-historic-key { border-top: 1px dashed var(--foreground); }
+  #club-full-plan .full-reserve-key { border-top: 1px dashed var(--viz-series-1); }
+  #club-full-plan .full-joinery-key { background: var(--muted-foreground); opacity: .45; }
+  #club-full-plan .full-caption { margin-top: 10px; }
+  #club-full-plan svg text { fill: var(--foreground); font-family: inherit; font-weight: 400; }
+  #club-full-plan .wall { fill: none; stroke: var(--foreground); stroke-opacity: .75; stroke-width: 1.6; }
+  #club-full-plan .partition { fill: none; stroke: var(--foreground); stroke-width: 1.5; }
+  #club-full-plan .historic { fill: none; stroke: var(--foreground); stroke-opacity: .45; stroke-width: 1; stroke-dasharray: 3 4; }
+  #club-full-plan .dimension { fill: none; stroke: var(--border); stroke-width: 1; }
+  #club-full-plan .window { fill: none; stroke: var(--foreground); stroke-opacity: .65; stroke-width: 1; }
+  #club-full-plan .pc-zone { fill: var(--viz-series-1); fill-opacity: .065; }
+  #club-full-plan .ps-zone { fill: var(--viz-series-2); fill-opacity: .09; }
+  #club-full-plan .service { fill: var(--muted); fill-opacity: .60; }
+  #club-full-plan .desk { fill: var(--viz-series-1); fill-opacity: .35; }
+  #club-full-plan .chair { fill: var(--muted); stroke: var(--border); stroke-width: 1; }
+  #club-full-plan .sofa { fill: var(--viz-series-2); fill-opacity: .32; }
+  #club-full-plan .tv { fill: var(--viz-series-2); fill-opacity: .8; }
+  #club-full-plan .column { fill: var(--muted); stroke: var(--foreground); stroke-width: 1.3; }
+  #club-full-plan .column-core { fill: none; stroke: var(--foreground); stroke-opacity: .5; stroke-width: 1; stroke-dasharray: 2 2; }
+  #club-full-plan .joinery { fill: var(--muted-foreground); fill-opacity: .28; stroke: var(--foreground); stroke-opacity: .7; stroke-width: 1; }
+  #club-full-plan .display { fill: var(--muted); stroke: var(--foreground); stroke-width: 1; }
+  #club-full-plan .reserve { fill: none; stroke: var(--viz-series-1); stroke-opacity: .7; stroke-width: 1; stroke-dasharray: 4 3; }
+  #club-full-plan .fire-clear { fill: var(--red); fill-opacity: .045; stroke: var(--red); stroke-opacity: .5; stroke-width: 1; stroke-dasharray: 3 3; }
+  #club-full-plan .fire-board { fill: var(--red); fill-opacity: .6; }
+  #club-full-plan .kitchen-table { fill: var(--viz-series-5); fill-opacity: .28; stroke: var(--border); stroke-width: 1; }
+  #club-full-plan .kitchen-bench { fill: var(--muted); stroke: var(--foreground); stroke-opacity: .6; stroke-width: 1; }
+  #club-full-plan .shared-passage { fill: var(--muted); fill-opacity: .75; }
+  #club-full-plan .route-main { fill: none; stroke: var(--viz-series-3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  #club-full-plan .route-backup { fill: none; stroke: var(--viz-series-4); stroke-width: 2; stroke-dasharray: 5 5; stroke-linecap: round; stroke-linejoin: round; }
+  #club-full-plan .route-corridor { fill: none; stroke: var(--muted-foreground); stroke-width: 1.5; stroke-dasharray: 3 4; stroke-linecap: round; }
+  #club-full-plan .red-outline { fill: none; stroke: var(--red); stroke-width: 1.6; stroke-opacity: .65; }
+</style>
+<script>
+(() => {
+  function initialize() {
+  const root=document.getElementById('club-full-plan');
+  if(!root || root.getAttribute('data-initialized')==='true') return;
+  const svg=root.querySelector('.full-drawing');
+  const status=root.querySelector('#club-full-status');
+  const routesControl=root.querySelector('#club-full-routes');
+  const historicKey=root.querySelector('#club-historic-key');
+  const detail=root.querySelector('#club-full-detail');
+  const kitchenKey=root.querySelector('#club-kitchen-key');
+  const kitchenDetail=root.querySelector('#club-kitchen-detail');
+  const buttons=Array.from(root.querySelectorAll('[data-view]'));
+  if(!svg || !status || !routesControl || !historicKey || !detail || !kitchenKey || !kitchenDetail) return;
+  root.setAttribute('data-initialized','true');
+  let saved;
+  try { saved=window.openai?.widgetState?.privateContent; } catch (_) {}
+  const revision='2026-10-13-layout-v5';
+  const compatibleState=saved?.revision===revision;
+  let view=compatibleState && ['two','source'].includes(saved.view)?saved.view:'two';
+  let showRoutes=compatibleState && typeof saved.routes==='boolean'?saved.routes:true;
+  let s=40,ox=0,oy=0,lastWidth=0,resizePending=false;
+  const X=x=>ox+x*s, Y=y=>oy+y*s;
+  const NS='http://www.w3.org/2000/svg';
+  function node(tag,attrs={},parent=svg) {
+    const item=document.createElementNS(NS,tag);
+    for(const [key,value] of Object.entries(attrs)) item.setAttribute(key,String(value));
+    parent.appendChild(item); return item;
+  }
+  function rect(x,y,w,h,cls,tip='',radius=0) {
+    const r=node('rect',{x:X(x),y:Y(y),width:w*s,height:h*s,class:cls,rx:radius*s});
+    if(tip) r.setAttribute('data-tooltip',tip);
+    return r;
+  }
+  function line(x1,y1,x2,y2,cls='wall') { return node('line',{x1:X(x1),y1:Y(y1),x2:X(x2),y2:Y(y2),class:cls}); }
+  function path(points,cls,arrow='') {
+    const p=node('path',{d:points.map((v,i)=>(i?'L':'M')+X(v[0])+' '+Y(v[1])).join(' '),class:cls});
+    if(arrow) p.setAttribute('marker-end','url(#club-full-'+arrow+')');
+    return p;
+  }
+  function text(x,y,value,small=true,anchor='middle') {
+    const t=node('text',{x:X(x),y:Y(y),'text-anchor':anchor,'dominant-baseline':'middle',class:small?'text-small':''});
+    t.textContent=value; return t;
+  }
+  function column(x,y,hidden=false) {
+    const c=rect(x,y,.41,.41,hidden?'column-core':'column','Существующая колонна 0,41 × 0,41 м; положение по изображению');
+    c.setAttribute('data-column','true');
+    if(!hidden) { line(x,y,x+.41,y+.41); line(x+.41,y,x,y+.41); }
+  }
+  function pc(x,y,vertical,index,facing) {
+    const w=vertical ? .75 : 1.2,h=vertical ? 1.2 : .75;
+    const d=rect(x,y,w,h,'desk','ПК '+index+' · стол 1,20 × 0,75 м',.04);
+    d.setAttribute('data-pc',index);
+    const cx=vertical?(facing==='right'?x+w+.05:x-.60):x+.325;
+    const cy=vertical?y+.29:y-.60;
+    const c=rect(cx,cy,.55,.55,'chair','Кресло ПК '+index,.10);
+    c.setAttribute('data-pc-chair',index);
+    if(s>=32) text(x+w/2,y+h/2,String(index));
+  }
+  function vipLayout() {
+    rect(0,0,3.20,3.93,'ps-zone','VIP 1 · около 12 м², площадь до обмера').setAttribute('data-vip','1');
+    path([[5.70,0],[8.37,0],[8.37,5.18],[4.60,5.18],[4.60,1.30],[5.70,1.30],[5.70,0]],'ps-zone').setAttribute('data-vip','2');
+    // Общий проход из нижней связи с №65 к северному проёму №86.
+    rect(3.30,0,1.20,3.93,'shared-passage','Общий проход около 1,2 м; колонны находятся сбоку').setAttribute('data-shared-passage','vertical');
+    rect(4.50,0,1.10,1.20,'shared-passage','Поворот к проёму у отметки 5,64').setAttribute('data-shared-passage','turn');
+    rect(0,3.93,4.50,1.25,'shared-passage','Связь №65 с коридором между VIP; проход заканчивается у поворота, без правого тупика').setAttribute('data-shared-passage','65-link');
+    line(3.25,0,3.25,.45,'partition'); line(3.25,1.35,3.25,3.93,'partition');
+    line(3.25,.45,3.25,1.35,'dimension').setAttribute('data-vip-door','1');
+    path([[5.65,0],[5.65,1.25],[4.55,1.25],[4.55,2.30]],'partition');
+    line(4.55,3.20,4.55,5.18,'partition');
+    line(4.55,2.30,4.55,3.20,'dimension').setAttribute('data-vip-door','2');
+    line(0,3.93,3.25,3.93,'partition');
+    // Сиденья и телевизоры расположены по сторонам общего прохода.
+    rect(.20,1.35,.85,2.30,'sofa','Угловой диван около 2,3 × 2,05 м',.08).setAttribute('data-sofa','1');
+    rect(1.05,2.80,1.20,.85,'sofa','Угловая секция дивана',.08);
+    rect(3.03,2.20,.17,1.30,'tv','ТВ и PS5 на внутренней стене VIP 1',.02);
+    rect(7.27,1.50,.80,2.65,'sofa','П-образный диван около 2,65 × 1,67 м, развёрнут к внутренней стене',.08).setAttribute('data-sofa','2');
+    rect(6.40,1.50,.87,.65,'sofa','Боковая секция П-дивана',.08);
+    rect(6.40,3.50,.87,.65,'sofa','Боковая секция П-дивана',.08);
+    rect(4.60,3.36,.17,1.30,'tv','ТВ и PS5 на внутренней стене VIP 2, ниже входа',.02);
+    rect(5.35,4.45,1.10,.55,'chair','Низкий столик для компании в присоединённой части VIP 2',.06).setAttribute('data-vip-table','2');
+    rect(7.55,4.30,.82,.88,'historic','№88 · 0,8 м² по исходнику; назначение уточнить, мебель сюда не ставим').setAttribute('data-unconfirmed-zone','88');
+    rect(1.65,1.46,.65,.65,'joinery','Колонна в мебельной оболочке; колонну сохраняем').setAttribute('data-column-wrap','true');
+    rect(4.93,1.46,.65,.65,'joinery','Колонна сбоку от прохода, в мебельной оболочке').setAttribute('data-column-wrap','true');
+    text(1.10,.58,'VIP 1',false); text(7.00,.85,'VIP 2',false);
+    if(s>=32) { text(1.10,.97,'≈12 м²'); text(7.00,1.25,'≈17 м²'); text(5.90,4.72,'Столик'); text(7.95,4.75,'88'); }
+    if(s>=32) {
+      const passageLabel=text(4.27,2.40,'Проход ≈1,2 м');
+      passageLabel.setAttribute('transform','rotate(-90 '+X(4.27)+' '+Y(2.40)+')');
+    }
+  }
+  function reservePc(x,y) {
+    rect(x,y,.75,1.2,'reserve','Возможное дополнительное место после обмера проходов').setAttribute('data-reserve','true');
+    rect(x+.8,y+.29,.55,.55,'reserve','Кресло дополнительного места',.08);
+    if(s>=32) text(x+.375,y+.60,'+1');
+  }
+  function kitchenReception() {
+    rect(4.55,5.30,.60,1.00,'kitchen-table','Небольшой стол 1,0 × 0,6 м у стены WC, в открытой зоне').setAttribute('data-kitchen-table','true');
+    rect(4.55,6.30,.60,.60,'kitchen-bench','Мойка около 0,6 × 0,6 м; подключения уточнить').setAttribute('data-kitchen-sink','true');
+    rect(4.67,6.40,.36,.34,'dimension','Чаша мойки');
+    if(s>=32) {
+      text(5.90,5.80,'Стол'); text(5.90,6.60,'Мойка');
+      line(5.15,5.80,5.40,5.80,'dimension'); line(5.15,6.60,5.40,6.60,'dimension');
+    }
+    const reception=rect(5.75,7.08,2.62,.73,'chair','Стойка ресепшна около 2,62 × 0,73 м');
+    reception.setAttribute('data-reception','north-of-99');
+    rect(7.00,6.35,.60,.60,'chair','Рабочее кресло администратора',.10);
+    text(7.06,7.45,s>=32?'Ресепшн':'Стойка');
+  }
+  function area(x,y,id,value) {
+    text(x,y,String(id));
+    if(s>=32) text(x,y+.65,value+' м²');
+  }
+  function draw() {
+    const measuredWidth=root.clientWidth;
+    const width=Math.max(240,Number.isFinite(measuredWidth) ? measuredWidth : 736);
+    lastWidth=width;
+    s=Math.min(40,(width-28)/13.25);
+    ox=(width-12.4*s)/2+2.0*s;
+    oy=24+2.05*s;
+    const height=oy+15.05*s+20;
+    svg.setAttribute('viewBox','0 0 '+width+' '+height);
+    svg.style.height=height+'px';
+    svg.textContent='';
+    node('title',{id:'club-full-title'}).textContent=view==='source'?'Контур помещений с уточнённым проходом из №86':'План клуба: 10 ПК, две VIP и проход из №86 к улице у отметки 5,64';
+    node('desc',{id:'club-full-desc'}).textContent='В №86 две VIP примерно 12 и 17 м². Правый тупик нижнего прохода присоединён к VIP 2, в нём расположен столик для компании. Диван VIP 2 развёрнут к внутренней стене с телевизором. Угол №88 с неподтверждённым назначением свободен от мебели. Общий проход оставлен только для связи №65, входов в VIP и северного проёма у 5,64, далее к лестничному узлу №63 и улице. Колонны сбоку от прохода сохранены. Связь №65 с левым коридором, десять ПК, витрина и доступ к пожарным щитам сохранены. Кухонная зона — открытый стол и мойка у стены WC. Ресепшн справа от №99. Геометрия до обмера, эвакуационные маршруты не проверены.';
+    const defs=node('defs');
+    for(const [id,color] of [['main','var(--viz-series-3)'],['backup','var(--viz-series-4)'],['corridor','var(--muted-foreground)']]) {
+      const marker=node('marker',{id:'club-full-'+id,viewBox:'0 0 6 6',refX:5,refY:3,markerWidth:6,markerHeight:6,orient:'auto'},defs);
+      node('path',{d:'M0 0 L6 3 L0 6 Z',fill:color},marker);
+    }
+    const proposed=view!=='source';
+    // Наружные и общие проходы: геометрия проёмов требует обмера.
+    rect(-1.49,-1.59,5.69,1.59,'service','№64 · 6,5 м², общий проход');
+    rect(-1.49,0,1.49,7.01,'service','Левый проход вдоль №86');
+    rect(4.2,-1.59,4.17,1.59,'service','Лестничный узел №63 · 9,0 м²');
+    path([[-1.49,7.01],[-1.49,-1.59],[8.37,-1.59],[8.37,-1.18]],'wall');
+    line(8.37,-.18,8.37,0); line(4.2,-1.59,4.2,-1.1); line(4.2,-.20,4.2,0);
+    for(let i=0;i<5;i++) line(5.60+i*.27,-1.50,5.60+i*.27,-.10,'dimension');
+    text(1.5,-1.22,'64'); text(7.52,-1.24,s>=32?'63 · 9,0 м²':'63');
+    text(5.05,-1.22,'5,64');
+    text(9.45,-1.20,'Улица');
+    // Полный периметр двух основных блоков.
+    rect(0,0,8.37,5.18,'ps-zone');
+    line(0,0,4.60,0); path([[5.50,0],[8.37,0],[8.37,5.18],[8.37,8.45]],'wall');
+    line(4.60,0,5.50,0,'dimension').setAttribute('data-exit','86-at-564');
+    line(8.37,9.55,8.37,13.77);
+    path([[8.37,13.77],[-1.49,13.77],[-1.49,7.01],[.68,7.01]],'wall');
+    line(1.5,7.01,1.85,7.01); line(0,0,0,5.78); line(0,6.68,0,7.01);
+    line(0,5.78,0,6.68,'dimension').setAttribute('data-connection','65-corridor');
+    line(0,5.18,.70,5.18); line(1.70,5.18,8.37,5.18);
+    // №99 и наружная лестница к основному входу.
+    rect(8.37,7.91,1.63,2.14,'service','№99 · основной вход, 2,2 м²');
+    rect(8.37,10.05,1.63,4.52,'service','Наружная лестница и площадка к улице');
+    path([[8.37,7.91],[10,7.91],[10,14.57],[8.37,14.57],[8.37,9.55]],'wall');
+    line(8.37,10.05,8.66,10.05); line(9.62,10.05,10,10.05);
+    for(let i=0;i<7;i++) line(8.53,11.45+i*.24,9.87,11.45+i*.24,'dimension');
+    text(9.19,8.50,s>=32?'99 · вход':'99'); if(s>=32) text(9.19,9.55,'2,2 м²');
+    text(9.19,10.80,'а8'); text(9.19,13.95,'а7');
+    text(9.2,14.95,'Улица');
+    // Высокие окна, показанные в полном исходнике.
+    for(const [a,b] of [[.35,1.50],[2.45,4.60],[10.10,13.35]]) {
+      line(8.42,a,8.42,b,'window'); line(8.50,a,8.50,b,'window');
+    }
+    for(const [a,b] of [[2.55,4.18],[6.06,7.64]]) {
+      line(a,13.82,b,13.82,'window'); line(a,13.90,b,13.90,'window');
+    }
+    // Нижняя площадь: границы бывших учётных зон не являются стенами.
+    path([[-1.49,7.01],[0,7.01],[0,5.18],[8.37,5.18],[8.37,13.77],[-1.49,13.77]],'pc-zone');
+    rect(1.85,5.18,2.60,1.83,'service','Зона №89 и туалет №90. Подходы со стороны №65 и №92.');
+    line(1.85,7.01,2.35,7.01); line(3.22,7.01,4.45,7.01); line(4.45,5.18,4.45,7.01);
+    // Сохранённые сплошные стены №92; справа связь с открытой площадью.
+    line(1.85,7.01,1.85,8.04); line(1.85,8.04,4.45,8.04);
+    text(2.60,5.86,'89'); text(3.70,5.92,s>=32?'90 · WC':'WC');
+    if(s>=32) { text(2.60,6.50,'2,0 м²'); text(3.75,6.57,'1,8 м²'); }
+    text(.74,5.63,'65'); if(!proposed && s>=32) text(.74,6.62,'2,3 м²');
+    text(3.10,7.48,'92');
+    if(proposed) {
+      vipLayout();
+      if(s>=32) text(2.10,4.25,'К №65');
+      kitchenReception();
+      rect(-1.36,7.45,.6,.82,'service','Предлагаемый технический шкаф');
+      if(s>=32) text(-1.04,7.86,'Тех.');
+      // Старое №1 удалено; левый ряд освобождён для пожарных щитов.
+      [10.05,11.25,12.45].forEach((y,i)=>pc(7.57,y,true,i+1,'left'));
+      [-1.34,-.14,1.06,2.26,3.46,4.66].forEach((x,i)=>pc(x,13.02,false,i+4,'up'));
+      pc(1.90,10.30,true,10,'right');
+      reservePc(3.65,10.30); reservePc(5.40,10.30);
+      const display=rect(2.10,9.65,2.8,.6,'display','Витрина около 2,8 × 0,6 м: энергетики и снеки; лицевая сторона к входному проходу');
+      display.setAttribute('data-display','snacks-and-drinks');
+      line(4.18,9.65,4.18,10.25,'dimension');
+      text(3.50,9.95,'Витрина');
+      if(s>=32) text(4.65,11.97,'Резерв +2 ПК');
+    } else {
+      text(4.18,3.03,'86 · 42,7 м²',false);
+      // Пунктир воспроизводит учётные границы, а не существующие стены.
+      line(1.85,5.18,1.85,7.01,'historic'); line(3.35,5.18,3.35,6.15,'historic');
+      line(5.57,5.18,5.57,8.04,'historic');
+      line(-.58,7.01,-.58,9.96,'historic'); line(-1.49,9.96,-.58,9.96,'historic');
+      line(1.85,8.04,1.85,9.96,'historic'); line(3.14,8.04,3.14,9.96,'historic'); line(4.45,8.04,4.45,9.96,'historic');
+      area(4.96,5.90,91,'1,7');
+      area(-1.04,8.1,95,'2,4'); area(.66,8.1,96,'6,2');
+      area(2.48,9.1,97,'1,9'); area(3.80,9.1,98,'2,1');
+      area(6.48,11.1,93,'29,4'); area(1.08,11.40,94,'23,0');
+      rect(0,4.45,.68,.73,'historic','№87 · 0,6 м², назначение уточнить');
+      rect(7.55,4.30,.82,.88,'historic','№88 · 0,8 м², назначение уточнить');
+      if(s>=32) { text(.33,4.75,'87'); text(7.94,4.68,'88'); }
+    }
+    const fireZone=rect(-1.49,9.55,1.70,1.9,'fire-clear','Пожарные щиты: свободный подход. Граница показана условно; габарит и открывание уточнить на месте.');
+    fireZone.setAttribute('data-fire-clear','true');
+    rect(-1.49,10.0,.14,.9,'fire-board','Существующие пожарные щиты на месте прежнего ПК №5');
+    text(-.64,10.20,s>=32?'Пожарные':'Щиты');
+    if(s>=32) { text(-.64,10.58,'щиты'); text(-.64,10.98,'Доступ'); }
+    column(1.77,1.58,proposed); column(5.05,1.58,proposed);
+    column(1.52,9.55); column(5.05,9.55);
+    // Наружная красная рамка только связывает новый план с исходным №86.
+    path([[0,0],[4.60,0]],'red-outline');
+    path([[5.50,0],[8.37,0],[8.37,5.18],[1.70,5.18]],'red-outline');
+    // Концептуальные направления выхода. Пунктир к №63 требует проверки.
+    if(showRoutes) {
+      path([[.78,8.85],[6.5,8.85],[7.1,9.0],[9.18,9.0],[9.18,14.66]],'route-main','main');
+      const exitRoute=proposed?[[.78,8.85],[.78,6.26],[1.12,5.75],[1.12,4.60],[3.90,4.60],[3.90,.60],[5.05,.60],[5.05,-.62],[9.95,-.62]]:[[1.12,4.60],[3.90,4.60],[3.90,.60],[5.05,.60],[5.05,-.62],[9.95,-.62]];
+      path(exitRoute,'route-backup','backup').setAttribute('data-route','86-564-street');
+      path([[.78,6.26],[-.72,6.26]],'route-corridor','corridor').setAttribute('data-route','65-corridor');
+    }
+    // Размеры из полного плана, а не размеры, снятые с экранных пикселей.
+    line(-1.49,14.38,8.37,14.38,'dimension');
+    line(-1.49,14.23,-1.49,14.50,'dimension'); line(8.37,14.23,8.37,14.50,'dimension');
+    text(3.44,14.40,'9,86 м');
+    if(s>=32) {
+      text(2.30,-12/s,'№86 · 8,37 м');
+      line(0,-12/s,.8,-12/s,'dimension'); line(3.8,-12/s,4.55,-12/s,'dimension');
+    }
+    const leftDim=text(-2.0,10.4,'6,76 м'); leftDim.setAttribute('transform','rotate(-90 '+X(-2.0)+' '+Y(10.4)+')');
+    const depth=text(8.80,2.60,'5,18 м');
+    depth.setAttribute('transform','rotate(-90 '+X(8.80)+' '+Y(2.60)+')');
+    if(s>=32) {
+      const rightDim=text(8.80,6.05,'8,59 м');
+      rightDim.setAttribute('transform','rotate(-90 '+X(8.80)+' '+Y(6.05)+')');
+    }
+    status.textContent=proposed?'10 ПК · 2 VIP · резерв +2 ПК':'№89–98: 74 м² · №86–88: 44,1 м² · h=4,37 по плану';
+    detail.textContent=proposed?'VIP ≈12 / 17 м² · Правый тупик присоединён к VIP 2':'Пунктир — учётные зоны · Северный проход №86 уточнён пользователем';
+    historicKey.hidden=proposed;
+    kitchenKey.hidden=!proposed;
+    kitchenDetail.hidden=!proposed;
+    routesControl.checked=showRoutes;
+    buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));
+  }
+  function save() {
+    try {
+      const result=window.openai?.setWidgetState?.({modelContent:{planDate:'2026-10-13',view,pcPlaces:10,pcExpansion:2,ps5Rooms:2,vipAreasApprox:[12,17],passage:'right dead end absorbed into VIP 2; shared route links 65, both VIP doors and exit',vip2:'rotated U sofa, internal TV wall and low table in added area',unconfirmedZone88:'kept free of furniture',columnTreatment:'furniture cladding, outside shared passage',entrance:99,reception:'straight counter north of 99',kitchen:'small open table and one sink, no walls or hot equipment in sketch',wcAccess:'preserved',display:'between lower columns, snacks and drinks',fireBoards:'old PC 5, access reserved',candidateExit:'86 north opening at 5.64, via staircase 63 to street',connection65:'left corridor preserved',openFloor:true,evacuationVerified:false},privateContent:{revision,view,routes:showRoutes}});
+      Promise.resolve(result).catch(()=>{});
+    } catch (_) {}
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;draw();save();}));
+  routesControl.addEventListener('change',()=>{showRoutes=routesControl.checked;draw();save();});
+  window.addEventListener('openai:set_globals',event=>{
+    const next=event.detail?.globals?.widgetState?.privateContent;
+    if(next?.revision!==revision) return;
+    if(['source','two'].includes(next.view)) view=next.view;
+    if(typeof next.routes==='boolean') showRoutes=next.routes;
+    draw();
+  });
+  draw();
+  // Перерисовка меняет высоту: реагируем только на ширину и вне callback наблюдателя.
+  function scheduleResize() {
+    if(resizePending || Math.max(240,root.clientWidth)===lastWidth) return;
+    resizePending=true;
+    const redraw=()=>{resizePending=false;draw();};
+    if(typeof window.requestAnimationFrame==='function') window.requestAnimationFrame(redraw);
+    else window.setTimeout(redraw,0);
+  }
+  if(typeof window.ResizeObserver==='function') {
+    try { new window.ResizeObserver(scheduleResize).observe(root); } catch (_) {}
+  }
+  window.addEventListener('resize',scheduleResize);
+  }
+  // Некоторые встроенные поверхности запускают script до готовности разметки.
+  if(document.getElementById('club-full-plan')) initialize();
+  else if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initialize,{once:true});
+  else window.setTimeout(initialize,0);
+})();
+</script>
