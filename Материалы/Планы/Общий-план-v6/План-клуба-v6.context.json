@@ -3,8 +3,8 @@
   "date": "2026-10-17",
   "units": "m",
   "sourceFiles": [
-    "../План-клуба-v5.source.html",
-    "../Исходный-план-помещения.jpg",
+    "../../Архив/План-v5/План-клуба-v5.source.html",
+    "../../Оригиналы/Исходный-план-помещения.jpg",
     "../VIP-1-и-VIP-2/План-VIP-1-и-VIP-2-с-коридорами.context.json"
   ],
   "vip1Decision": "Latest common saved layout, bare column; three later proposals were not selected.",

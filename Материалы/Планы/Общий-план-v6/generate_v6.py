@@ -6,7 +6,7 @@ import hashlib
 from html import escape
 
 OUT = Path(__file__).resolve().parent
-PROJECT = OUT.parent.parent
+ASSETS = OUT.parent.parent
 VIP = json.loads((OUT.parent / 'VIP-1-и-VIP-2/План-VIP-1-и-VIP-2-с-коридорами.context.json').read_text())
 INK = '#26353b'
 MUTED = '#5d6b72'
@@ -454,7 +454,7 @@ if __name__ == '__main__':
     (OUT/'План-клуба-v6.html').write_text(html)
     ctx={
       'version':6,'date':'2026-10-17','units':'m',
-      'sourceFiles':['../План-клуба-v5.source.html','../Исходный-план-помещения.jpg','../VIP-1-и-VIP-2/План-VIP-1-и-VIP-2-с-коридорами.context.json'],
+      'sourceFiles':['../../Архив/План-v5/План-клуба-v5.source.html','../../Оригиналы/Исходный-план-помещения.jpg','../VIP-1-и-VIP-2/План-VIP-1-и-VIP-2-с-коридорами.context.json'],
       'vip1Decision':'Latest common saved layout, bare column; three later proposals were not selected.',
       'vip2Decision':'Selected storage treatment, L sofa against high window wall, two poufs, table 1.40 × 0.80.',
       'display':'Removed completely from between the lower columns.',
