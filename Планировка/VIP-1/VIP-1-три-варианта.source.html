@@ -1,0 +1,135 @@
+<div id="vip-one-three-layouts">
+  <h3>VIP №1 · три варианта расстановки</h3>
+  <div class="text-small text-muted">≈3,20 × 3,93 м · колонна ≈0,41 × 0,41 м · вид сверху, один масштаб</div>
+  <div class="vot-grid">
+    <section aria-labelledby="vot-east-heading">
+      <h3 id="vot-east-heading">Прямой диван</h3>
+      <svg class="vot-drawing" data-layout="east" role="img"></svg>
+      <div class="text-small">Диван 2,20 м · столик 0,95 × 0,55 м</div>
+    </section>
+    <section aria-labelledby="vot-north-heading">
+      <h3 id="vot-north-heading">Экран сверху</h3>
+      <svg class="vot-drawing" data-layout="north" role="img"></svg>
+      <div class="text-small">Диван 2,10 м · столик 1,00 × 0,55 м</div>
+    </section>
+    <section aria-labelledby="vot-corner-heading">
+      <h3 id="vot-corner-heading">Уголок со столом</h3>
+      <svg class="vot-drawing" data-layout="corner" role="img"></svg>
+      <div class="text-small">Диван 2,50 × 2,20 м · столик 1,05 × 0,65 м</div>
+    </section>
+  </div>
+  <div class="viz-row text-small vot-legend">
+    <span><b class="vot-seat-key"></b>Посадка</span>
+    <span><b class="vot-column-key"></b>Колонна</span>
+    <span><b class="vot-storage-key"></b>Полка</span>
+    <span>Человек ≈0,50 × 0,30 м в плане</span>
+  </div>
+  <div class="text-small text-muted">Вход и колонна на прежних местах · предлагаемые варианты, до обмера</div>
+</div>
+<style>
+  #vip-one-three-layouts { width:100%; color:var(--foreground); }
+  #vip-one-three-layouts > h3 { margin:0 96px 6px 0; }
+  #vip-one-three-layouts .vot-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:20px 0 18px; }
+  #vip-one-three-layouts section { min-width:0; }
+  #vip-one-three-layouts section h3 { margin:0 0 8px; }
+  #vip-one-three-layouts .vot-drawing { display:block; width:100%; margin:0 0 10px; }
+  #vip-one-three-layouts .vot-drawing text { fill:var(--foreground); font-family:inherit; font-weight:400; }
+  #vip-one-three-layouts .vot-floor { fill:var(--foreground); fill-opacity:.025; }
+  #vip-one-three-layouts .vot-wall { fill:none; stroke:var(--foreground); stroke-width:1.5; }
+  #vip-one-three-layouts .vot-dimension { fill:none; stroke:var(--muted-foreground); stroke-width:1; }
+  #vip-one-three-layouts .vot-seat { fill:var(--viz-series-1); fill-opacity:.26; stroke:var(--viz-series-1); stroke-opacity:.65; stroke-width:1; }
+  #vip-one-three-layouts .vot-seam { fill:none; stroke:var(--viz-series-1); stroke-opacity:.65; stroke-width:1; }
+  #vip-one-three-layouts .vot-column { fill:var(--foreground); fill-opacity:.18; stroke:var(--foreground); stroke-width:1; }
+  #vip-one-three-layouts .vot-table { fill:var(--foreground); fill-opacity:.08; stroke:var(--muted-foreground); stroke-width:1; }
+  #vip-one-three-layouts .vot-storage { fill:var(--viz-series-2); fill-opacity:.28; stroke:var(--viz-series-2); stroke-width:1; }
+  #vip-one-three-layouts .vot-screen { fill:var(--foreground); }
+  #vip-one-three-layouts .vot-person { fill:var(--foreground); fill-opacity:.65; }
+  #vip-one-three-layouts .vot-head { fill:var(--background); stroke:var(--foreground); stroke-width:1; }
+  #vip-one-three-layouts .vot-legend { justify-content:flex-start; gap:8px 20px; margin-bottom:8px; }
+  #vip-one-three-layouts .vot-legend span { display:inline-flex; align-items:center; gap:6px; }
+  #vip-one-three-layouts .vot-legend b { display:inline-block; width:12px; height:12px; }
+  #vip-one-three-layouts .vot-seat-key { background:var(--viz-series-1); opacity:.5; }
+  #vip-one-three-layouts .vot-column-key { background:var(--foreground); opacity:.5; }
+  #vip-one-three-layouts .vot-storage-key { background:var(--viz-series-2); opacity:.5; }
+  @media(max-width:850px) { #vip-one-three-layouts .vot-grid { grid-template-columns:1fr; gap:30px; } }
+</style>
+<script>
+(() => {
+  const root=document.getElementById('vip-one-three-layouts');
+  if(!root||root.dataset.initialized)return;
+  root.dataset.initialized='true';
+  const common={width:3.20,depth:3.93,column:{x:1.77,y:1.58,w:.41,h:.41},door:{x:3.20,y:.45,width:.90},columnEnclosure:false};
+  const layouts={
+    east:{name:'Прямой диван',description:'Прямой диван вдоль левой стены, ТВ справа. Основная зона просмотра расположена ниже колонны. На северной грани колонны отдельная неглубокая полка для аксессуаров. Один мобильный пуф.',
+      seats:[{x:.08,y:1.65,w:.85,h:2.20,back:'left',places:3}],
+      table:{x:1.33,y:2.42,w:.55,h:.95},tv:{x:3.05,y:2.15,w:.12,h:1.30},
+      storage:[{x:1.675,y:1.40,w:.60,h:.18}],poufs:[{x:2.37,y:3.16,w:.60,h:.60}],
+      person:{x:.75,y:.88},columnLabel:{x:1.55,y:1.12},tableLabel:{x:1.605,y:2.895,rotate:true},tvLabel:{x:2.82,y:2.70,rotate:true}},
+    north:{name:'Экран сверху',description:'Диван у нижней стены, ТВ на верхней стене со смещением влево. Колонна остаётся справа от основных направлений просмотра. Вход справа свободен, колонна без навесной мебели.',
+      seats:[{x:.12,y:2.98,w:2.10,h:.85,back:'bottom',places:3}],
+      table:{x:.42,y:2.00,w:1.00,h:.55},tv:{x:.25,y:.08,w:1.20,h:.12},
+      storage:[],poufs:[],person:{x:2.65,y:2.80},columnLabel:{x:1.975,y:1.32},tableLabel:{x:.92,y:2.275},tvLabel:{x:.85,y:.44}},
+    corner:{name:'Уголок со столом',description:'Угловой диван вдоль левой и нижней стен, ТВ справа. Отдельный низкий столик примыкает к южной грани колонны; колонна открытая, массивной оболочки нет. Слева от столика до дивана около 40 см, снизу около 36 см.',
+      seats:[{x:.08,y:1.35,w:.80,h:2.50,back:'left',places:3},{x:.88,y:3.00,w:1.40,h:.85,back:'bottom',places:2}],
+      table:{x:1.28,y:1.99,w:1.05,h:.65},tv:{x:3.05,y:2.40,w:.12,h:1.30},
+      storage:[],poufs:[],person:{x:.83,y:.76},columnLabel:{x:1.975,y:1.30},tableLabel:{x:1.805,y:2.315},tvLabel:{x:2.82,y:3.14,rotate:true}}
+  };
+  root.dataset.planContext=JSON.stringify({date:'2026-10-16',room:'VIP №1',status:'три предложения, вариант пользователем пока не выбран',common,layouts});
+  const NS='http://www.w3.org/2000/svg';
+  let lastWidth=0,pending=false;
+  function drawAll(){
+    lastWidth=root.clientWidth;
+    const drawings=Array.from(root.querySelectorAll('.vot-drawing'));
+    const width=Math.min(...drawings.map(svg=>svg.parentElement.clientWidth));
+    const scale=Math.min(112,(width-60)/3.20),height=58+3.93*scale+35;
+    drawings.forEach(svg=>{
+      const key=svg.dataset.layout,layout=layouts[key];
+      const ox=(width-3.20*scale)/2+9,oy=50;
+      const X=x=>ox+x*scale,Y=y=>oy+y*scale;
+      svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.style.height=height+'px';svg.replaceChildren();
+      function node(tag,attrs={},parent=svg){const n=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));parent.appendChild(n);return n;}
+      function rect(b,cls,attrs={}){return node('rect',{x:X(b.x),y:Y(b.y),width:b.w*scale,height:b.h*scale,class:cls,...attrs});}
+      function line(x1,y1,x2,y2,cls='vot-dimension'){return node('line',{x1:X(x1),y1:Y(y1),x2:X(x2),y2:Y(y2),class:cls});}
+      function text(x,y,value,rotate=false){const n=node('text',{x:X(x),y:Y(y),class:'text-small','text-anchor':'middle','dominant-baseline':'middle'});n.textContent=value;if(rotate)n.setAttribute('transform',`rotate(-90 ${X(x)} ${Y(y)})`);return n;}
+      node('title',{id:`vot-${key}-title`}).textContent=layout.name+' · VIP №1';
+      node('desc',{id:`vot-${key}-desc`}).textContent=layout.description+' Комната около 3,20 на 3,93 метра. Колонна 0,41 на 0,41 метра и вход на прежних местах. Человек сверху в одном масштабе с мебелью.';
+      svg.setAttribute('aria-labelledby',`vot-${key}-title vot-${key}-desc`);
+      rect({x:0,y:0,w:3.20,h:3.93},'vot-floor');
+      line(0,0,3.20,0,'vot-wall');line(0,0,0,3.93,'vot-wall');line(0,3.93,3.20,3.93,'vot-wall');
+      line(3.20,0,3.20,.45,'vot-wall');line(3.20,1.35,3.20,3.93,'vot-wall');
+      line(0,-.22,3.20,-.22);line(0,-.28,0,-.10);line(3.20,-.28,3.20,-.10);text(1.60,-.43,'≈3,20 м');
+      line(-.22,0,-.22,3.93);line(-.28,0,-.10,0);line(-.28,3.93,-.10,3.93);text(-.41,1.965,'≈3,93 м',true);
+      line(3.18,.90,2.78,.90);line(2.78,.90,2.88,.83);line(2.78,.90,2.88,.97);text(2.75,.34,'Вход');
+      layout.seats.forEach((b,i)=>{
+        rect(b,'vot-seat',{rx:.055*scale,'data-sofa':i,'data-tooltip':`Диван: секция ${b.w.toFixed(2)} × ${b.h.toFixed(2)} м`});
+        if(b.back==='left'){
+          line(b.x+.16,b.y+.07,b.x+.16,b.y+b.h-.07,'vot-seam');
+          for(let j=1;j<b.places;j++)line(b.x+.17,b.y+b.h*j/b.places,b.x+b.w-.04,b.y+b.h*j/b.places,'vot-seam');
+        }else{
+          line(b.x+.06,b.y+b.h-.16,b.x+b.w-.06,b.y+b.h-.16,'vot-seam');
+          for(let j=1;j<b.places;j++)line(b.x+b.w*j/b.places,b.y+.04,b.x+b.w*j/b.places,b.y+b.h-.17,'vot-seam');
+        }
+      });
+      layout.poufs.forEach(p=>{rect(p,'vot-seat',{rx:.07*scale,'data-pouf':'true','data-tooltip':'Мобильный пуф около 0,60 × 0,60 м'});text(p.x+p.w/2,p.y+p.h/2,'Пуф');});
+      layout.storage.forEach(b=>rect(b,'vot-storage',{'data-storage':'true','data-tooltip':'Отдельная полка у северной грани колонны: глубина около 18 см; это не короб вокруг колонны'}));
+      const c=common.column;
+      rect(c,'vot-column',{'data-column':'true','data-tooltip':'Существующая колонна около 0,41 × 0,41 м. Положение и размер сохранены.'});
+      line(c.x,c.y,c.x+c.w,c.y+c.h);line(c.x+c.w,c.y,c.x,c.y+c.h);
+      const label=layout.columnLabel;text(label.x,label.y,'Колонна');
+      line(label.x,label.y+.11,c.x+c.w/2,c.y-.04);
+      rect(layout.table,'vot-table',{rx:.04*scale,'data-table':'true','data-tooltip':key==='corner'?'Низкий отдельно стоящий столик 1,05 × 0,65 м вплотную к колонне; без зашивки колонны':`Низкий столик ${layout.table.w.toFixed(2)} × ${layout.table.h.toFixed(2)} м`});
+      const tl=layout.tableLabel;text(tl.x,tl.y,'Столик',Boolean(tl.rotate));
+      rect(layout.tv,'vot-screen',{'data-tv':'true','data-tooltip':'ТВ / PS5; показан условный габарит экрана'});
+      const tvl=layout.tvLabel;text(tvl.x,tvl.y,'ТВ / PS5',Boolean(tvl.rotate));
+      const p=layout.person,human=node('g',{'data-person':'true','data-tooltip':'Человек сверху: габарит около 0,50 × 0,30 м'});
+      node('ellipse',{cx:X(p.x-.02),cy:Y(p.y),rx:.13*scale,ry:.225*scale,class:'vot-person'},human);
+      [-.2125,.2125].forEach(dy=>node('rect',{x:X(p.x-.11),y:Y(p.y+dy-.0375),width:.17*scale,height:.075*scale,rx:.032*scale,class:'vot-person'},human));
+      [-.1125,.1125].forEach(dy=>node('rect',{x:X(p.x-.055),y:Y(p.y+dy-.0475),width:.205*scale,height:.095*scale,rx:.035*scale,class:'vot-person'},human));
+      node('circle',{cx:X(p.x+.015),cy:Y(p.y),r:.10*scale,class:'vot-head'},human);
+      text(1.60,4.18,'≈12 м²');
+    });
+  }
+  drawAll();
+  new ResizeObserver(()=>{if(Math.abs(root.clientWidth-lastWidth)<1||pending)return;pending=true;requestAnimationFrame(()=>{pending=false;drawAll();});}).observe(root);
+})();
+</script>

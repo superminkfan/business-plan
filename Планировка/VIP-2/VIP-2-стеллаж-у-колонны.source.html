@@ -1,0 +1,145 @@
+<div id="vip-column-corridors">
+  <h3>VIP №2 · стеллаж у колонны</h3>
+  <div class="text-small" id="vcc-detail" aria-live="polite"></div>
+  <svg class="vcc-drawing" role="img" aria-labelledby="vcc-title vcc-desc"></svg>
+  <div class="viz-row text-small vcc-legend">
+    <span><b class="vcc-route-key"></b>К №63 и улице</span>
+    <span><b class="vcc-branch-key"></b>Выход из VIP №2</span>
+    <span><b class="vcc-storage-key"></b>Хранение настолок</span>
+  </div>
+  <div class="text-small">Сохранено 16.10.2026 · размеры до обмера · дверь №63 доступна для входа и выхода, подтверждено пользователем</div>
+</div>
+<style>
+  #vip-column-corridors { color: var(--foreground); width: 100%; }
+  #vip-column-corridors .vcc-drawing { display: block; width: 100%; margin: 8px 0; }
+  #vip-column-corridors .vcc-drawing text { fill: var(--foreground); font-family: inherit; font-weight: 400; }
+  #vip-column-corridors .vcc-floor { fill: var(--foreground); fill-opacity: .025; }
+  #vip-column-corridors .vcc-neighbor { fill: var(--foreground); fill-opacity: .045; }
+  #vip-column-corridors .vcc-corridor { fill: var(--foreground); fill-opacity: .075; }
+  #vip-column-corridors .vcc-wall { fill: none; stroke: var(--foreground); stroke-width: 1.6; }
+  #vip-column-corridors .vcc-faint { fill: none; stroke: var(--muted-foreground); stroke-width: 1; }
+  #vip-column-corridors .vcc-stair { fill: none; stroke: var(--border); stroke-width: 1; }
+  #vip-column-corridors .vcc-door { fill: none; stroke: var(--foreground); stroke-width: 1.2; }
+  #vip-column-corridors .vcc-swing { fill: none; stroke: var(--muted-foreground); stroke-width: 1; stroke-dasharray: 3 4; }
+  #vip-column-corridors .vcc-seat { fill: var(--viz-series-1); fill-opacity: .26; stroke: var(--viz-series-1); stroke-opacity: .65; stroke-width: 1; }
+  #vip-column-corridors .vcc-seam { fill: none; stroke: var(--viz-series-1); stroke-opacity: .65; stroke-width: 1; }
+  #vip-column-corridors .vcc-tv { fill: var(--foreground); }
+  #vip-column-corridors .vcc-coffee-table { fill: var(--foreground); fill-opacity: .10; stroke: var(--muted-foreground); stroke-width: 1; }
+  #vip-column-corridors .vcc-window { fill: none; stroke: var(--muted-foreground); stroke-width: 1.2; }
+  #vip-column-corridors .vcc-core { fill: var(--foreground); fill-opacity: .18; stroke: var(--foreground); stroke-width: 1; }
+  #vip-column-corridors .vcc-bulk { fill: var(--muted); stroke: var(--muted-foreground); stroke-width: 1; }
+  #vip-column-corridors .vcc-storage { fill: var(--viz-series-2); fill-opacity: .22; stroke: var(--viz-series-2); stroke-width: 1; }
+  #vip-column-corridors .vcc-storage-line { fill: none; stroke: var(--viz-series-2); stroke-width: 1; }
+  #vip-column-corridors .vcc-route { fill: none; stroke: var(--viz-series-3); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  #vip-column-corridors .vcc-arrow { fill: var(--viz-series-3); }
+  #vip-column-corridors .vcc-branch { fill: none; stroke: var(--viz-series-3); stroke-width: 1.7; stroke-dasharray: 4 4; stroke-linecap: round; stroke-linejoin: round; }
+  #vip-column-corridors .vcc-person { fill: var(--foreground); fill-opacity: .65; }
+  #vip-column-corridors .vcc-head { fill: var(--background); stroke: var(--foreground); stroke-width: 1; }
+  #vip-column-corridors .vcc-legend { justify-content: flex-start; gap: 12px 22px; margin-bottom: 10px; }
+  #vip-column-corridors .vcc-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  #vip-column-corridors .vcc-legend b { display: inline-block; width: 20px; height: 0; }
+  #vip-column-corridors .vcc-route-key { border-top: 2px solid var(--viz-series-3); }
+  #vip-column-corridors .vcc-branch-key { border-top: 2px dashed var(--viz-series-3); }
+  #vip-column-corridors .vcc-legend .vcc-storage-key { width: 12px; height: 12px; background: var(--viz-series-2); opacity: .55; }
+</style>
+<script>
+(() => {
+  function initialize() {
+    const root=document.getElementById('vip-column-corridors');
+    if(!root||root.dataset.initialized)return;
+    root.dataset.initialized='true';
+    const svg=root.querySelector('.vcc-drawing'),detail=root.querySelector('#vcc-detail');
+    const revision='2026-10-16-vip2-storage-saved';
+    const treatments={
+      storage:{name:'Стеллаж у колонны',detail:'Полки ≈30–36 см · колонна остаётся внутри VIP',
+        description:'Перегородка коридора сохранена. К колонне со стороны VIP примыкают полки справа и снизу. Хранение открывается внутрь комнаты; шкафов в общем коридоре нет.',
+        shelving:[{x:5.46,y:1.58,w:.30,h:.41},{x:4.88,y:1.99,w:.82,h:.36}],
+        bulk:null,partition:[[5.65,1.06],[5.65,1.25],[4.55,1.25],[4.55,5.18]]}
+    };
+    const geometry={date:'2026-10-16',revision,room:'VIP №2',source:'План-клуба-v5 + выбранный вариант 3 + стеллаж у колонны',
+      sofa:{x:7.47,y:2.30,w:.90,h:2.80},return:{x:6.42,y:4.20,w:1.05,h:.90},
+      table:{x:6.27,y:2.40,w:.80,h:1.40},tv:{x:4.60,y:3.05,w:.12,h:1.30},
+      poufs:[{x:6.90,y:.38,w:.65,h:.65},{x:4.78,y:4.20,w:.60,h:.60}],
+      column:{x:5.05,y:1.58,w:.41,h:.41},door:{x:5.65,y:.16,width:.90,hinge:'сверху',opens:'внутрь VIP'},
+      mainCorridor:{x:3.30,y:0,w:1.20,h:3.93},lowerCorridor:{x:0,y:3.93,w:4.50,h:1.25},
+      mainRoute:[[.78,6.75],[.78,5.75],[1.12,4.60],[3.90,4.60],[3.90,.60],[5.05,.60],[5.05,-.62],[9.70,-.62]],
+      vipRoute:[[5.90,3.65],[5.95,2.70],[6.10,2.05],[6.10,1.42],[6.10,.68],[5.05,.68]],
+      windowGap:0,number88:'игнорируется',dimensionsApproximate:true,
+      exit63:{doorExists:true,availableForEntry:true,availableForExit:true,confirmedBy:'пользователь',confirmedOn:'2026-10-16'}};
+    const selected='storage';
+    let lastWidth=0,pending=false;
+    const NS='http://www.w3.org/2000/svg';
+    function draw(){
+      const width=root.clientWidth||736;lastWidth=width;
+      const s=Math.min(67,(width-20)/11.80),ox=(width-11.80*s)/2+1.70*s,oy=1.85*s,height=oy+7.25*s;
+      const X=x=>ox+x*s,Y=y=>oy+y*s,t=treatments[selected];
+      svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.style.height=`${height}px`;svg.replaceChildren();
+      root.dataset.planContext=JSON.stringify({...geometry,selectedTreatment:selected,treatments});
+      detail.textContent=t.detail;
+      function node(tag,attrs={},parent=svg){const el=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v)));parent.appendChild(el);return el;}
+      function rect(b,cls,attrs={}){return node('rect',{x:X(b.x),y:Y(b.y),width:b.w*s,height:b.h*s,class:cls,...attrs});}
+      function line(x1,y1,x2,y2,cls='vcc-wall',attrs={}){return node('line',{x1:X(x1),y1:Y(y1),x2:X(x2),y2:Y(y2),class:cls,...attrs});}
+      function path(points,cls,attrs={}){return node('path',{d:points.map(([x,y],i)=>`${i?'L':'M'}${X(x)} ${Y(y)}`).join(' '),class:cls,...attrs});}
+      function text(x,y,value,attrs={}){const el=node('text',{x:X(x),y:Y(y),class:'text-small','text-anchor':'middle','dominant-baseline':'middle',...attrs});el.textContent=value;return el;}
+      function rotated(x,y,value){return text(x,y,value,{transform:`rotate(-90 ${X(x)} ${Y(y)})`});}
+      node('title',{id:'vcc-title'}).textContent=`VIP №2: ${t.name}; коридоры и маршрут через доступную дверь №63 на улицу`;
+      node('desc',{id:'vcc-desc'}).textContent=t.description+' Контур остальных помещений взят из версии 5. Показаны нижний проход от №65, коридор между VIP, северный проём у 5,64, лестничный узел №63 и выход на улицу. Общая полоса между VIP принята около 1,2 м. Выход из VIP №2 показан отдельно пунктиром. Диван у стены с высоким окном, два пуфа и столик сохранены. Пользователь 16 октября 2026 года подтвердил: дверь №63 существует и доступна для выхода и входа в помещение. Размеры и привязки мебельного эскиза ориентировочные, до обмера.';
+      const defs=node('defs'),marker=node('marker',{id:'vcc-exit-arrow',viewBox:'0 0 6 6',refX:5,refY:3,markerWidth:6,markerHeight:6,orient:'auto'},defs);
+      node('path',{d:'M0 0 L6 3 L0 6 Z',class:'vcc-arrow'},marker);
+      rect({x:-1.49,y:-1.59,w:5.69,h:1.59},'vcc-corridor');
+      rect({x:4.20,y:-1.59,w:4.17,h:1.59},'vcc-corridor');
+      rect({x:-1.49,y:0,w:1.49,h:7.01},'vcc-corridor');
+      rect({x:0,y:0,w:3.20,h:3.93},'vcc-neighbor');
+      rect({x:3.30,y:0,w:1.20,h:3.93},'vcc-corridor');
+      rect({x:4.50,y:0,w:1.10,h:1.20},'vcc-corridor');
+      rect(geometry.lowerCorridor,'vcc-corridor');
+      rect({x:0,y:5.18,w:1.85,h:1.83},'vcc-neighbor');
+      path([[5.70,0],[8.37,0],[8.37,5.18],[4.60,5.18],[4.60,1.30],[5.70,1.30],[5.70,0]],'vcc-floor');
+      path([[-1.49,7.01],[-1.49,-1.59],[8.37,-1.59],[8.37,-1.18]],'vcc-wall');
+      line(8.37,-.18,8.37,5.18);line(4.20,-1.59,4.20,-1.10);line(4.20,-.20,4.20,0);
+      for(let i=0;i<5;i++)line(5.60+i*.27,-1.50,5.60+i*.27,-.10,'vcc-stair');
+      text(1.50,-1.25,'№64 · общий проход');text(7.36,-1.28,'№63 · лестница');text(9.12,-1.20,'Улица');
+      text(5.05,-1.28,'5,64');
+      line(0,0,4.60,0);line(5.50,0,8.37,0);
+      line(0,0,0,5.78);line(0,6.68,0,7.01);
+      line(0,5.18,.70,5.18);line(1.70,5.18,8.37,5.18);
+      line(0,3.93,3.25,3.93);line(3.25,0,3.25,.45);line(3.25,1.35,3.25,3.93);
+      text(1.50,1.03,'VIP №1');text(1.50,1.39,'без изменений');
+      rect({x:1.77,y:1.58,w:.41,h:.41},'vcc-core');
+      line(3.25,.45,3.25,1.35,'vcc-swing');
+      rotated(-.75,3.42,'Левый общий коридор');
+      rotated(4.27,2.88,'Проход ≈1,2 м');
+      text(2.05,4.16,'Связь №65 → VIP');text(1.35,6.10,'№65');
+      text(3.0,6.45,'К залу / №99 ↓');
+      path([[.78,6.40],[-.75,6.40]],'vcc-swing');
+      line(5.65,0,5.65,.16);path(t.partition,'vcc-wall');
+      line(5.65,.16,6.55,.16,'vcc-door');
+      node('path',{d:`M${X(5.65)} ${Y(1.06)} A${.9*s} ${.9*s} 0 0 0 ${X(6.55)} ${Y(.16)}`,class:'vcc-swing','data-tooltip':'Дверь в том же верхнем проёме; петли сверху, открывание внутрь VIP'});
+      if(t.bulk)rect(t.bulk,'vcc-bulk',{'data-column-enclosure':'true','data-tooltip':'Колонна в локальном объёме перегородки; она показана в разрезе. Вся перегородка не сдвигается.'});
+      rect(geometry.column,'vcc-core',{'data-column':'true','data-tooltip':'Существующая колонна около 0,41 × 0,41 м; конструкцию сохраняем'});
+      line(5.05,1.58,5.46,1.99,'vcc-faint');line(5.46,1.58,5.05,1.99,'vcc-faint');
+      t.shelving.forEach(b=>{rect(b,'vcc-storage',{'data-storage':'board-games','data-tooltip':'Хранение настолок, доступ только со стороны VIP. Глубина подбирается по коробкам.'});line(b.x+b.w/3,b.y,b.x+b.w/3,b.y+b.h,'vcc-storage-line');line(b.x+b.w*2/3,b.y,b.x+b.w*2/3,b.y+b.h,'vcc-storage-line');});
+      const shelf=t.shelving[t.shelving.length-1];
+      line(5.17,shelf.y+shelf.h,5.17,2.71,'vcc-storage-line');text(5.17,2.87,'Настолки');
+      text(7.20,1.52,'VIP №2');
+      rect(geometry.sofa,'vcc-seat',{rx:.06*s});rect(geometry.return,'vcc-seat',{rx:.06*s});
+      line(8.19,2.38,8.19,5.02,'vcc-seam');[1,2].forEach(i=>line(7.50,2.30+2.80*i/3,8.19,2.30+2.80*i/3,'vcc-seam'));
+      line(6.50,4.92,7.39,4.92,'vcc-seam');
+      rect(geometry.table,'vcc-coffee-table',{rx:.06*s,'data-furniture':'Столик','data-tooltip':'Столик 1,4 × 0,8 м, зазоры до дивана около 40 см'});rotated(6.67,3.10,'Столик');
+      rect(geometry.tv,'vcc-tv');rotated(4.94,3.58,'ТВ / PS5');
+      geometry.poufs.forEach(p=>{rect(p,'vcc-seat',{rx:.06*s});text(p.x+p.w/2,p.y+p.h/2,'П');});
+      line(8.42,2.45,8.42,4.60,'vcc-window');line(8.49,2.45,8.49,4.60,'vcc-window');rotated(8.70,3.52,'Высокое окно');
+      path(geometry.mainRoute,'vcc-route',{'marker-end':'url(#vcc-exit-arrow)','data-route':'65-to-63-to-street'});
+      path(geometry.vipRoute,'vcc-branch',{'data-route':'vip2-to-corridor'});
+      const hx=3.62,hy=3.55;
+      node('ellipse',{cx:X(hx),cy:Y(hy),rx:.20*s,ry:.12*s,class:'vcc-person'});
+      [-.20,.20].forEach(dx=>node('circle',{cx:X(hx+dx),cy:Y(hy-.03),r:.05*s,class:'vcc-person'}));
+      node('circle',{cx:X(hx),cy:Y(hy-.09),r:.10*s,class:'vcc-head'});
+      if(s>=45){line(0,5.55,8.37,5.55,'vcc-stair');text(4.18,5.78,'№86 · общая ширина ≈8,37 м');}
+    }
+    draw();
+    new ResizeObserver(()=>{if(Math.abs((root.clientWidth||736)-lastWidth)<1||pending)return;pending=true;requestAnimationFrame(()=>{pending=false;draw();});}).observe(root);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialize,{once:true});else initialize();
+})();
+</script>

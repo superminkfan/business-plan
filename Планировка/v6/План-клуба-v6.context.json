@@ -1,0 +1,1129 @@
+{
+  "version": 6,
+  "date": "2026-10-17",
+  "units": "m",
+  "sourceFiles": [
+    "../План-клуба-v5.source.html",
+    "../Исходный-план-помещения.jpg",
+    "../VIP-1-и-VIP-2/План-VIP-1-и-VIP-2-с-коридорами.context.json"
+  ],
+  "vip1Decision": "Latest common saved layout, bare column; three later proposals were not selected.",
+  "vip2Decision": "Selected storage treatment, L sofa against high window wall, two poufs, table 1.40 × 0.80.",
+  "display": "Removed completely from between the lower columns.",
+  "people": {
+    "countOnPlan": 7,
+    "view": "top",
+    "shoulderWidth": 0.5,
+    "bodyDepth": 0.3
+  },
+  "pcPlaces": 10,
+  "conditionalPcReserve": 2,
+  "vipAreasApprox": [
+    12,
+    17
+  ],
+  "confirmedExit63": {
+    "doorExists": true,
+    "availableForEntry": true,
+    "availableForExit": true,
+    "confirmedBy": "пользователь",
+    "confirmedOn": "2026-10-16"
+  },
+  "geometryOrigin": "Upper left inner corner of room 86, x to right, y down. Coordinates use the v5 sketch frame.",
+  "columns": [
+    {
+      "x": 1.77,
+      "y": 1.58,
+      "w": 0.41,
+      "h": 0.41
+    },
+    {
+      "x": 5.05,
+      "y": 1.58,
+      "w": 0.41,
+      "h": 0.41
+    },
+    {
+      "x": 1.52,
+      "y": 9.55,
+      "w": 0.41,
+      "h": 0.41
+    },
+    {
+      "x": 5.05,
+      "y": 9.55,
+      "w": 0.41,
+      "h": 0.41
+    }
+  ],
+  "windowsApprox": {
+    "rightWallY": [
+      [
+        0.35,
+        1.5
+      ],
+      [
+        2.45,
+        4.6
+      ],
+      [
+        10.1,
+        13.35
+      ]
+    ],
+    "bottomWallX": [
+      [
+        2.55,
+        4.18
+      ],
+      [
+        6.06,
+        7.64
+      ]
+    ],
+    "sillHeight": null
+  },
+  "vipGeometry": {
+    "date": "2026-10-16",
+    "revision": "2026-10-16-vip1-vip2-corridors-v1",
+    "room": "VIP №1 + VIP №2",
+    "source": "VIP №1 без оболочки из текущего чата + сохранённая VIP №2 «Стеллаж у колонны» + коридоры версии 5",
+    "vip1": {
+      "width": 3.2,
+      "depth": 3.93,
+      "sofa": [
+        {
+          "x": 0.2,
+          "y": 1.35,
+          "w": 0.85,
+          "h": 2.3
+        },
+        {
+          "x": 1.05,
+          "y": 2.8,
+          "w": 1.2,
+          "h": 0.85
+        }
+      ],
+      "column": {
+        "x": 1.77,
+        "y": 1.58,
+        "w": 0.41,
+        "h": 0.41
+      },
+      "columnEnclosure": false,
+      "tv": {
+        "x": 3.03,
+        "y": 2.2,
+        "w": 0.17,
+        "h": 1.3
+      },
+      "door": {
+        "x": 3.25,
+        "y": 0.45,
+        "width": 0.9
+      },
+      "person": {
+        "x": 2.6,
+        "y": 2.42
+      }
+    },
+    "sofa": {
+      "x": 7.47,
+      "y": 2.3,
+      "w": 0.9,
+      "h": 2.8
+    },
+    "return": {
+      "x": 6.42,
+      "y": 4.2,
+      "w": 1.05,
+      "h": 0.9
+    },
+    "table": {
+      "x": 6.27,
+      "y": 2.4,
+      "w": 0.8,
+      "h": 1.4
+    },
+    "tv": {
+      "x": 4.6,
+      "y": 3.05,
+      "w": 0.12,
+      "h": 1.3
+    },
+    "poufs": [
+      {
+        "x": 6.9,
+        "y": 0.38,
+        "w": 0.65,
+        "h": 0.65
+      },
+      {
+        "x": 4.78,
+        "y": 4.2,
+        "w": 0.6,
+        "h": 0.6
+      }
+    ],
+    "column": {
+      "x": 5.05,
+      "y": 1.58,
+      "w": 0.41,
+      "h": 0.41
+    },
+    "door": {
+      "x": 5.65,
+      "y": 0.16,
+      "width": 0.9,
+      "hinge": "сверху",
+      "opens": "внутрь VIP"
+    },
+    "mainCorridor": {
+      "x": 3.3,
+      "y": 0,
+      "w": 1.2,
+      "h": 3.93
+    },
+    "lowerCorridor": {
+      "x": 0,
+      "y": 3.93,
+      "w": 4.5,
+      "h": 1.25
+    },
+    "mainRoute": [
+      [
+        0.78,
+        6.75
+      ],
+      [
+        0.78,
+        5.75
+      ],
+      [
+        1.12,
+        4.6
+      ],
+      [
+        3.9,
+        4.6
+      ],
+      [
+        3.9,
+        0.6
+      ],
+      [
+        5.05,
+        0.6
+      ],
+      [
+        5.05,
+        -0.62
+      ],
+      [
+        9.7,
+        -0.62
+      ]
+    ],
+    "vipRoute": [
+      [
+        5.9,
+        3.65
+      ],
+      [
+        5.95,
+        2.7
+      ],
+      [
+        6.1,
+        2.05
+      ],
+      [
+        6.1,
+        1.42
+      ],
+      [
+        6.1,
+        0.68
+      ],
+      [
+        5.05,
+        0.68
+      ]
+    ],
+    "windowGap": 0,
+    "number88": "игнорируется",
+    "dimensionsApproximate": true,
+    "exit63": {
+      "doorExists": true,
+      "availableForEntry": true,
+      "availableForExit": true,
+      "confirmedBy": "пользователь",
+      "confirmedOn": "2026-10-16"
+    },
+    "selectedTreatment": "storage",
+    "treatments": {
+      "storage": {
+        "name": "Стеллаж у колонны",
+        "detail": "Полки ≈30–36 см · колонна остаётся внутри VIP",
+        "description": "Перегородка коридора сохранена. К колонне со стороны VIP примыкают полки справа и снизу. Хранение открывается внутрь комнаты; шкафов в общем коридоре нет.",
+        "shelving": [
+          {
+            "x": 5.46,
+            "y": 1.58,
+            "w": 0.3,
+            "h": 0.41
+          },
+          {
+            "x": 4.88,
+            "y": 1.99,
+            "w": 0.82,
+            "h": 0.36
+          }
+        ],
+        "bulk": null,
+        "partition": [
+          [
+            5.65,
+            1.06
+          ],
+          [
+            5.65,
+            1.25
+          ],
+          [
+            4.55,
+            1.25
+          ],
+          [
+            4.55,
+            5.18
+          ]
+        ]
+      }
+    },
+    "savedOn": "2026-10-16",
+    "sourceSha256": "00492da314d7843bff8ccd2530de05239337934e692427fc7602cf6a246e571b",
+    "exports": {
+      "html": "План-VIP-1-и-VIP-2-с-коридорами.html",
+      "png": "План-VIP-1-и-VIP-2-с-коридорами.png",
+      "source.html": "План-VIP-1-и-VIP-2-с-коридорами.source.html",
+      "context.json": "План-VIP-1-и-VIP-2-с-коридорами.context.json",
+      "svg": "План-VIP-1-и-VIP-2-с-коридорами.svg"
+    }
+  },
+  "sourceDimensions": {
+    "room86Width": 8.37,
+    "room86Depth": 5.18,
+    "lowerWidth": 9.86,
+    "lowerLeftDepth": 6.76,
+    "lowerRightDepth": 8.59,
+    "columnSize": 0.41,
+    "heightLabel": 4.37
+  },
+  "drawnDimensions": [
+    {
+      "axis": "x",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        8.37,
+        0
+      ],
+      "line": -2.28,
+      "value": "8,37 · №86",
+      "known": true
+    },
+    {
+      "axis": "x",
+      "start": [
+        -1.49,
+        -1.59
+      ],
+      "end": [
+        0,
+        -1.59
+      ],
+      "line": -2.82,
+      "value": "≈1,49",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        -1.49,
+        -1.59
+      ],
+      "end": [
+        -1.49,
+        0
+      ],
+      "line": -2.05,
+      "value": "≈1,59",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.37,
+        0
+      ],
+      "end": [
+        8.37,
+        5.18
+      ],
+      "line": 9.28,
+      "value": "5,18",
+      "known": true
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.37,
+        5.18
+      ],
+      "end": [
+        8.37,
+        13.77
+      ],
+      "line": 11.65,
+      "value": "8,59",
+      "known": true
+    },
+    {
+      "axis": "y",
+      "start": [
+        -1.49,
+        7.01
+      ],
+      "end": [
+        -1.49,
+        13.77
+      ],
+      "line": -2.62,
+      "value": "6,76",
+      "known": true
+    },
+    {
+      "axis": "y",
+      "start": [
+        -1.49,
+        -1.59
+      ],
+      "end": [
+        -1.49,
+        13.77
+      ],
+      "line": -3.62,
+      "value": "≈15,36 · общий габарит эскиза",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        -1.49,
+        13.77
+      ],
+      "end": [
+        8.37,
+        13.77
+      ],
+      "line": 14.9,
+      "value": "9,86",
+      "known": true
+    },
+    {
+      "axis": "x",
+      "start": [
+        -1.34,
+        13.77
+      ],
+      "end": [
+        5.86,
+        13.77
+      ],
+      "line": 14.25,
+      "value": "≈7,20 · 6 × 1,20",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.32,
+        10.05
+      ],
+      "end": [
+        8.32,
+        13.65
+      ],
+      "line": 10.7,
+      "value": "≈3,60 · 3 × 1,20",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.86,
+        13.02
+      ],
+      "end": [
+        7.57,
+        13.02
+      ],
+      "line": 12.12,
+      "value": "≈1,71",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        6.15,
+        11.5
+      ],
+      "end": [
+        6.15,
+        12.42
+      ],
+      "line": 6.55,
+      "value": "≈0,92",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        -1.49,
+        9.55
+      ],
+      "end": [
+        1.52,
+        9.55
+      ],
+      "line": 9.23,
+      "value": "≈3,01",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        1.52,
+        9.55
+      ],
+      "end": [
+        5.05,
+        9.55
+      ],
+      "line": 9.23,
+      "value": "≈3,53",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.46,
+        9.55
+      ],
+      "end": [
+        8.37,
+        9.55
+      ],
+      "line": 9.23,
+      "value": "≈2,91",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.37,
+        5.18
+      ],
+      "end": [
+        8.37,
+        9.55
+      ],
+      "line": 10.7,
+      "value": "≈4,37 · до грани колонн",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        1.85,
+        8.04
+      ],
+      "end": [
+        4.45,
+        8.04
+      ],
+      "line": 8.38,
+      "value": "≈2,60",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        1.85,
+        5.18
+      ],
+      "end": [
+        1.85,
+        7.01
+      ],
+      "line": 1.62,
+      "value": "≈1,83",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.75,
+        7.08
+      ],
+      "end": [
+        8.37,
+        7.08
+      ],
+      "line": 6.08,
+      "value": "≈2,62",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        4.45,
+        7.08
+      ],
+      "end": [
+        5.75,
+        7.08
+      ],
+      "line": 7.74,
+      "value": "≈1,30",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        8.37,
+        7.91
+      ],
+      "end": [
+        10,
+        7.91
+      ],
+      "line": 7.55,
+      "value": "≈1,63",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        10,
+        7.91
+      ],
+      "end": [
+        10,
+        10.05
+      ],
+      "line": 10.25,
+      "value": "≈2,14",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        -1.49,
+        9.55
+      ],
+      "end": [
+        0.21,
+        9.55
+      ],
+      "line": 9.0,
+      "value": "≈1,70",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        -1.49,
+        9.55
+      ],
+      "end": [
+        -1.49,
+        11.45
+      ],
+      "line": -1.98,
+      "value": "≈1,90",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        3.3,
+        null
+      ],
+      "end": [
+        4.5,
+        null
+      ],
+      "line": 2.95,
+      "value": "≈1,20",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        3.93
+      ],
+      "end": [
+        null,
+        5.18
+      ],
+      "line": 2.87,
+      "value": "≈1,25",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        0.7,
+        null
+      ],
+      "end": [
+        1.7,
+        null
+      ],
+      "line": 5.38,
+      "value": "≈1,00",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        4.6,
+        null
+      ],
+      "end": [
+        5.5,
+        null
+      ],
+      "line": -0.24,
+      "value": "≈0,90",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        8.45
+      ],
+      "end": [
+        null,
+        9.55
+      ],
+      "line": 8.03,
+      "value": "≈1,10",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        8.37,
+        0
+      ],
+      "line": -1.04,
+      "value": "8,37",
+      "known": true
+    },
+    {
+      "axis": "x",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        3.2,
+        0
+      ],
+      "line": -0.58,
+      "value": "≈3,20",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.7,
+        0
+      ],
+      "end": [
+        8.37,
+        0
+      ],
+      "line": -0.58,
+      "value": "≈2,67",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        0,
+        3.93
+      ],
+      "line": -0.38,
+      "value": "≈3,93",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.37,
+        0
+      ],
+      "end": [
+        8.37,
+        5.18
+      ],
+      "line": 9.18,
+      "value": "≈5,18",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        8.37,
+        2.3
+      ],
+      "end": [
+        8.37,
+        5.1
+      ],
+      "line": 8.76,
+      "value": "≈2,80",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        4.6,
+        5.18
+      ],
+      "end": [
+        8.37,
+        5.18
+      ],
+      "line": 5.84,
+      "value": "≈3,77",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        6.42,
+        5.1
+      ],
+      "end": [
+        8.37,
+        5.1
+      ],
+      "line": 5.43,
+      "value": "≈1,95",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        0,
+        null
+      ],
+      "end": [
+        4.5,
+        null
+      ],
+      "line": 4.76,
+      "value": "≈4,50",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        3.93
+      ],
+      "end": [
+        null,
+        5.18
+      ],
+      "line": 3.0,
+      "value": "≈1,25",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        3.3,
+        null
+      ],
+      "end": [
+        4.5,
+        null
+      ],
+      "line": 3.45,
+      "value": "≈1,20",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        0.45
+      ],
+      "end": [
+        null,
+        1.35
+      ],
+      "line": 3.65,
+      "value": "≈0,90",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        0.16
+      ],
+      "end": [
+        null,
+        1.06
+      ],
+      "line": 6.65,
+      "value": "≈0,90",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        0,
+        1.58
+      ],
+      "end": [
+        1.77,
+        1.58
+      ],
+      "line": 1.1,
+      "value": "≈1,77",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        1.77,
+        1.58
+      ],
+      "end": [
+        2.18,
+        1.58
+      ],
+      "line": 1.1,
+      "value": "0,41",
+      "known": true
+    },
+    {
+      "axis": "x",
+      "start": [
+        2.18,
+        1.58
+      ],
+      "end": [
+        3.2,
+        1.58
+      ],
+      "line": 1.1,
+      "value": "≈1,02",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        2.18,
+        0
+      ],
+      "end": [
+        2.18,
+        1.58
+      ],
+      "line": 2.48,
+      "value": "≈1,58",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        1.05,
+        null
+      ],
+      "end": [
+        1.77,
+        null
+      ],
+      "line": 2.3,
+      "value": "≈0,72",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        2.25,
+        null
+      ],
+      "end": [
+        3.03,
+        null
+      ],
+      "line": 3.48,
+      "value": "≈0,78",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        0.2,
+        null
+      ],
+      "end": [
+        2.25,
+        null
+      ],
+      "line": 3.79,
+      "value": "≈2,05",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        4.6,
+        1.58
+      ],
+      "end": [
+        5.05,
+        1.58
+      ],
+      "line": 1.43,
+      "value": "≈0,45",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.05,
+        1.58
+      ],
+      "end": [
+        5.46,
+        1.58
+      ],
+      "line": 1.43,
+      "value": "0,41",
+      "known": true
+    },
+    {
+      "axis": "x",
+      "start": [
+        5.46,
+        1.58
+      ],
+      "end": [
+        5.76,
+        1.58
+      ],
+      "line": 1.43,
+      "value": "≈0,30",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        6.27,
+        2.4
+      ],
+      "end": [
+        7.07,
+        2.4
+      ],
+      "line": 2.15,
+      "value": "≈0,80",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        6.27,
+        2.4
+      ],
+      "end": [
+        6.27,
+        3.8
+      ],
+      "line": 6.05,
+      "value": "≈1,40",
+      "known": false
+    },
+    {
+      "axis": "x",
+      "start": [
+        7.07,
+        null
+      ],
+      "end": [
+        7.47,
+        null
+      ],
+      "line": 3.98,
+      "value": "≈0,40",
+      "known": false
+    },
+    {
+      "axis": "y",
+      "start": [
+        null,
+        3.8
+      ],
+      "end": [
+        null,
+        4.2
+      ],
+      "line": 6.51,
+      "value": "≈0,40",
+      "known": false
+    }
+  ],
+  "dimensionPolicy": "Only explicit source-plan dimensions are black. All coordinate-derived dimensions carry ≈ and blue text. Wall thickness symbolic. Not a measured construction drawing.",
+  "dimensionCaveats": [
+    "Room 99 outline is schematic; recorded area 2.2 m² is not recalculated from the schematic rectangle.",
+    "The mark 5.64 is a source reference, not an opening width.",
+    "WC 89/90 dimensions apply to the combined schematic block, not each individual room.",
+    "Conditional PC reserve is not an approved layout; occupied-chair clearances are unverified."
+  ],
+  "files": {
+    "detailSvg": "План-клуба-v6-с-размерами.svg",
+    "detailPng": "План-клуба-v6-с-размерами.png",
+    "sketchSvg": "План-клуба-v6-эскиз.svg",
+    "sketchPng": "План-клуба-v6-эскиз.png",
+    "html": "План-клуба-v6.html",
+    "source": "generate_v6.py"
+  },
+  "svgSha256": {
+    "detail": "8c3b4838786bc7bf66f5391acb5ffd9bc886d2fdc78c8619403d303d1fb464fe",
+    "sketch": "d91ee9f5aef14e732ac6ec410a780d1d803285b2629d92ea097c4e4afc46bb8f"
+  }
+}
